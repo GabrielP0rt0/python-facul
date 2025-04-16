@@ -15,7 +15,7 @@ if __name__ == "__main__":
         comprimento_usuario = int(input("Digite o comprimento desejado para a senha: "))
         if comprimento_usuario <= 0:
             raise ValueError("O comprimento deve ser maior que zero.")
-        senha_gerada = gerar_senha(comprimento_usuario)
-        print(f"Sua senha gerada é: {senha_gerada}")
+        SENHA_GERADA = gerar_senha(comprimento_usuario)
+        print(f"Sua senha gerada é: {SENHA_GERADA}")
     except ValueError as erro:
         print(f"Entrada inválida: {erro}")
