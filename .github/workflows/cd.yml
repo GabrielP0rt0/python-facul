@@ -16,3 +16,4 @@ jobs:
           path: |
             main.py
             '../main.py'
+            ../main.py
