@@ -9,11 +9,11 @@ jobs:
   deliver:
     runs-on: ubuntu-latest
     steps:
-      - name: Simulando CD 
+      - name: Checkout do código
+        uses: actions/checkout@v4
+      
+      - name: Upload do Artefato
         uses: actions/upload-artifact@v4
         with:
           name: projetoZip.zip
-          path: |
-            main.py
-            '../main.py'
-            ../main.py
+          path: main.py
