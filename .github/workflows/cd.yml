@@ -14,5 +14,5 @@ jobs:
         with:
           name: projetoZip.zip
           path: |
-            '**.py'
-            README.md
+            main.py
+            '../main.py'
