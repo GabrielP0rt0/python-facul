@@ -17,3 +17,12 @@ jobs:
         with:
           name: projetoZipado
           path: main.py
+  deploy:
+    runs-on: ubunto-latest
+    needs: deliver
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: projetoZipado
+      - name: Diplay structure of download files
+        run: ls -R
