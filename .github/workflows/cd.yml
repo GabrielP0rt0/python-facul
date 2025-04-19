@@ -49,4 +49,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: seu-usuario-docker-hub/senha-api:latest
+          tags: gportol/senha-api:latest
