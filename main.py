@@ -1,21 +1,20 @@
 """
-Gerador de senhas aleatórias com comprimento personalizado.
+API FastAPI para gerar senhas aleatórias de 16 caracteres.
 """
 
 import random
 import string
+from fastapi import FastAPI
 
-def gerar_senha(comprimento=12):
-    """Gera uma senha aleatória com o comprimento especificado."""
+app = FastAPI()
+
+def gerar_senha(comprimento=16):
+    """Gera uma senha aleatória com o comprimento fixo de 16 caracteres."""
     caracteres = string.ascii_letters + string.digits + string.punctuation
     return ''.join(random.choice(caracteres) for _ in range(comprimento))
 
-if __name__ == "__main__":
-    try:
-        comprimento_usuario = int(input("Digite o comprimento desejado para a senha: "))
-        if comprimento_usuario <= 0:
-            raise ValueError("O comprimento deve ser maior que zero.")
-        SENHA_GERADA = gerar_senha(comprimento_usuario)
-        print(f"Sua senha gerada é: {SENHA_GERADA}")
-    except ValueError as erro:
-        print(f"Entrada inválida: {erro}")
+@app.get("/senha")
+def obter_senha():
+    """Endpoint GET que retorna uma senha gerada."""
+    senha = gerar_senha()
+    return {"senha": senha}
