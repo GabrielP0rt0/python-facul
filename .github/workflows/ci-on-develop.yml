@@ -3,10 +3,8 @@ name: CI - Tests on develop
 on:
   push:
     branches:
-      - develop  
-  push: 
-    branches:
-      - main
+      - develop 
+      - main 
 
 jobs:
   run-tests:
